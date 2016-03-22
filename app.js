@@ -10,11 +10,27 @@ app.get("/",function (req,res) {
 
 app.get("/:dateFormat", function(req,res){
 
-	var m = req.params.detFormat;
-	console.log(moment().unix());
+	var m = req.params.dateFormat;
+
+	if(moment(m,["x","MMMM DD YYYY"],true).isValid()){
+		res.json(
+			{
+				natural: moment(m,["X","MMMM DD YYYY"]).format(),
+			    unix:   moment(m,["X","MMMM DD YYYY"]).unix()
+			}
+		);
+	
+	}else{
+		res.json(
+			{
+				natural: null,
+			    unix:   null
+			}
+		);
+	}
+	
 	
 
-	res.redirect("/");
 	//console.log(moment(req.params));
 	//res.json(req.param);
 });
