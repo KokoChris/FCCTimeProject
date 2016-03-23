@@ -3,6 +3,8 @@ var express = require("express"),
     port    = process.env.PORT || 3000,
     app     = express();
 
+app.use(express.static('public'));
+
 app.get("/",function (req,res) {
 
 	res.send("This is the root route!");
@@ -16,7 +18,7 @@ app.get("/:dateFormat", function(req,res){
 	if(moment(m,["x","MMMM DD YYYY"],true).isValid()){
 		res.json(
 			{
-				natural: moment(m,["X","MMMM DD YYYY"]).format(),
+				natural: moment(m,["X","MMMM DD YYYY"]).format("MMMM DD YYYY"),
 			    unix:   moment(m,["X","MMMM DD YYYY"]).unix()
 			}
 		);

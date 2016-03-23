@@ -1,1 +1,1 @@
-Nothing to say yet!
+Free Code Camp Project. Pass a Date in natural date form or in unix format and get back a json with a represantation of the string in both formats!
