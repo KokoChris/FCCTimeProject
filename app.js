@@ -11,7 +11,7 @@ app.get("/",function (req,res) {
 app.get("/:dateFormat", function(req,res){
 
 	var m = req.params.dateFormat;
-
+	
 	if(moment(m,["x","MMMM DD YYYY"],true).isValid()){
 		res.json(
 			{
@@ -28,11 +28,6 @@ app.get("/:dateFormat", function(req,res){
 			}
 		);
 	}
-	
-	
-
-	//console.log(moment(req.params));
-	//res.json(req.param);
 });
 
 app.listen(3000,function(){
