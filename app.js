@@ -1,5 +1,6 @@
 var express = require("express"),
     moment  = require("moment"),
+    port    = process.env.PORT || 3000,
     app     = express();
 
 app.get("/",function (req,res) {
@@ -30,6 +31,6 @@ app.get("/:dateFormat", function(req,res){
 	}
 });
 
-app.listen(3000,function(){
+app.listen(port,function(){
 	console.log("Server has started!!");
 });
