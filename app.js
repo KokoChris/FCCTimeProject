@@ -15,10 +15,10 @@ app.get("/:dateFormat", function(req,res){
 
 	var m = req.params.dateFormat;
 	
-	if(moment(m,["x","MMMM DD YYYY"],true).isValid()){
+	if(moment(m,["x","MMMM DD YYYY","MMMM D YYYY"],true).isValid()){
 		res.json(
 			{
-				natural: moment(m,["X","MMMM DD YYYY"]).format("MMMM DD YYYY"),
+				natural: moment(m,["X","MMMM DD YYYY","MMMM D YYYY"]).format("MMMM DD YYYY"),
 			    unix:   moment(m,["X","MMMM DD YYYY"]).unix()
 			}
 		);
