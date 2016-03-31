@@ -6,9 +6,10 @@ var express = require("express"),
 app.use(express.static('public'));
 
 app.get("/",function (req,res) {
-
-	res.send("This is the root route!");
+	
+	res.send(req.headers);
 });
+
 
 
 app.get("/:dateFormat", function(req,res){
